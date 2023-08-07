@@ -1,0 +1,22 @@
+.click {
+    cursor: pointer;
+}
+
+body {
+    background-image: url(https://furamavietnam.com/wp-content/uploads/2018/08/BG2.jpg);
+    background-position: right bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.font-text {
+    font-family: Open Sans, sans-serif;
+    font-size: 13px;
+}
+
+.font-text-footer {
+    font-family: "Playfair Display", serif;
+    color: #cbbe73;
+    font-weight: bold;
+}

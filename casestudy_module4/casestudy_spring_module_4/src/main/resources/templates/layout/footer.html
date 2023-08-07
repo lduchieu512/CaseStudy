@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/template/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/template/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<div th:fragment="footer">
+    <!--+++++++++++++++++++++footer+++++++++++++++++++++-->
+    <div class="position-relative mx-0 bottom-0 row" style="background-color: aquamarine; width: 100%">
+        <div class="col-md-3 bg-light container">
+            <h2 class="font-text-footer">Moving Guide</h2>
+            <p class="font-text">Furama is a premier base for exploring one of Asia’s most exciting new destinations.
+                Just a short drive from Danang lay four UNESCO-listed World Heritage Sites:</p>
+            <a class="btn btn-outline-light bg-success"
+               href="https://www.google.com/maps/place/Furama+Resort+Danang/@16.0429695,108.1788929,13z/data=!4m22!1m13!4m12!1m4!2m2!1d108.1784457!2d16.0564791!4e1!1m6!1m2!1s0x31420fdbc8cc38ef:0x9a6a3e31121225d2!2zRnVyYW1hIFJlc29ydCDEkMOgIE7hurVuZw!2m2!1d108.2510681!2d16.0399456!3m7!1s0x31420fdbc8cc38ef:0x9a6a3e31121225d2!5m2!4m1!1i2!8m2!3d16.0399456!4d108.2510681"
+               role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                     class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                </svg>
+                <span>View on Map</span>
+            </a>
+            <h4 class="font-text-footer mt-3">Local Places</h4>
+            <div class="row">
+                <div class="col-md-8 text-primary">
+                    <h6> 1. The former imperial city of HUE </h6>
+                    <h6> 2. The ancient Hoi An </h6>
+                    <h6> 3. Champa civilization, My Son </h6>
+                    <h6> 4. Phong Nha Caves </h6>
+                </div>
+                <div class="col-md-4">
+                    <p style="color: darkgrey">2 hours</p>
+                    <p style="color: darkgrey">30 minutes</p>
+                    <p style="color: darkgrey">90 minutes</p>
+                    <p style="color: darkgrey">3 hours</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-center align-content-center text-primary">
+            <ul>
+                <li class="my-5">News</li>
+                <li class="my-5">Rack Rate</li>
+                <li class="my-5">Lifestyle Blog</li>
+                <li class="my-5">Work with us</li>
+                <li class="my-5">Contract us</li>
+            </ul>
+        </div>
+        <div class="col-md-3 mt-5">
+            <h2 class="font-text-footer">Contract US</h2>
+            <br>
+            <div class="row">
+                <div class="col-md-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                    </svg>
+                </div>
+                <div class="col-md-10">
+                    <p style="font-size: 14px">
+                        103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam
+                    </p>
+                    <p style="font-size: 14px">Tel.: 84-236-3847 333/888 * Fax: 84-236-3847 666</p>
+                    <p style="font-size: 14px">Email: reservation@furamavietnam.com</p>
+                    <p style="font-size: 14px">
+                        www.furamavietnam.com GDS Codes: Amadeus-GD DADFUR, Galileo/Apollo-GD 16236, Sabre-GD 032771,
+                        Worldspan- GD DADFU
+                    </p>
+                    <hr>
+                    <a href="https://www.facebook.com/furamaresort/" target="_blank" rel="noopener">
+                        <img style="width: 32px;height: 32px;float: left"
+                             src="https://furamavietnam.com/wp-content/uploads/2019/06/incon-Facbook-1.png" alt=""
+                             width="32" height="32"/>
+                    </a>
+                    <a href="https://www.instagram.com/furama_resort_danang/?hl=vi" target="_blank" rel="noopener">
+                        <img style="width: 40px;height: 32px;float: left"
+                             src="https://furamavietnam.com/wp-content/uploads/2019/06/social-ins.png" alt="" width="40"
+                             height="32"/>
+                    </a>
+                    <a href="https://www.youtube.com/user/furamaresortvietnam/featured" target="_blank" rel="noopener">
+                        <img style="width: 40px;height: 32px;float: left"
+                             src="https://furamavietnam.com/wp-content/uploads/2021/10/social-youtube.png" alt=""
+                             width="40" height="32"/>
+                    </a>
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="/template/bootstrap/jquery-3.6.0.min.js"></script>
+<script src="/template/bootstrap/js/bootstrap.js"></script>
+<script src="/template/index.js"></script>
+</body>
+</html>

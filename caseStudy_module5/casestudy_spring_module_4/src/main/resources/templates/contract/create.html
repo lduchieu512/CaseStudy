@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Contract</title>
+    <link rel="stylesheet" href="/template/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/template/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<!--+++++++++++++++++++++header+++++++++++++++++++++-->
+<div th:replace="~{layout/header.html}"></div>
+
+<!--+++++++++++++++++++++navbar top+++++++++++++++++++++-->
+<div class="mt-2 sticky-top" style="background-color: #046056">
+    <nav class="navbar navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light ps-5 click" href="/">Home</a>
+            <a class="navbar-brand text-light click" href="/employee/list">Employee</a>
+            <a class="navbar-brand text-light click" href="/customer/list">Customer</a>
+            <a class="navbar-brand text-light click" href="/service/list">Service</a>
+            <a class="navbar-brand text-light click" href="/contract/list">Contract</a>
+            <form class="d-flex m-0">
+                <input type="search" class="form-control me-2" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+
+<!--+++++++++++++++++++++content+++++++++++++++++++++-->
+<div class="row">
+    <div th:replace="~{layout/sidebar.html}"></div>
+    <div class="col-md-10 container-fluid">
+        <br>
+        <center>
+            <h1 class="font-text-footer">Create Contract</h1>
+            <div th:if="${mess != null}">
+                <h2 class="text-danger" th:text="${mess}"></h2>
+            </div>
+            <br>
+            <div class="container-fluid p-0">
+                <form th:action="@{/contract/create}" method="post" th:object="${contract}">
+                    <div class="input-group mb-3">
+                        <span hidden class="input-group-text">ID</span>
+                        <input hidden type="text" class="form-control me-2" placeholder="ID" th:field="*{contractId}">
+                    </div>
+
+                    <!-- Error -->
+                    <div>
+                        <span class="text-danger" th:if="${#fields.hasErrors('contractStartDate')}"
+                              th:errors="*{contractStartDate}">
+                            Name Error
+                        </span>
+
+                        <span class="text-danger" th:if="${#fields.hasErrors('contractEndDate')}"
+                              th:errors="*{contractEndDate}">
+                            Name Error
+                        </span>
+
+                        <span class="text-danger" th:if="${#fields.hasErrors('contractDeposit')}"
+                              th:errors="*{contractDeposit}">
+                            Name Error
+                        </span>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Start Date</span>
+                        <input type="date" class="form-control me-2" placeholder="Start Date"
+                               th:field="*{contractStartDate}">
+
+                        <span class="input-group-text">End Date</span>
+                        <input type="date" class="form-control me-2" placeholder="End Date"
+                               th:field="*{contractEndDate}">
+
+                        <span class="input-group-text">Deposit</span>
+                        <input type="number" class="form-control me-2" placeholder="Deposit"
+                               th:field="*{contractDeposit}">
+                    </div>
+
+                    <!-- Error -->
+                    <div>
+                        <span class="text-danger" th:if="${#fields.hasErrors('contractTotalMoney')}"
+                              th:errors="*{contractTotalMoney}">
+                            Name Error
+                        </span>
+
+                        <span class="text-danger" th:if="${#fields.hasErrors('employeeId')}"
+                              th:errors="*{employeeId}">
+                            Name Error
+                        </span>
+
+                        <span class="text-danger" th:if="${#fields.hasErrors('customerId')}"
+                              th:errors="*{customerId}">
+                            Name Error
+                        </span>
+
+                        <span class="text-danger" th:if="${#fields.hasErrors('serviceId')}"
+                              th:errors="*{serviceId}">
+                            Name Error
+                        </span>
+                    </div>
+
+                    <div class="input-group me-3">
+                        <span class="input-group-text">Total Money</span>
+                        <input type="number" class="form-control me-2" placeholder="Total Money"
+                               th:field="*{contractTotalMoney}">
+
+                        <span class="input-group-text">Employee</span>
+                        <select class="me-2" th:field="*{employeeId}">
+                            <option value="">Choose</option>
+                            <div th:each="employee : ${employeeList}">
+                                <option th:value="${employee.employeeId}" th:text="${employee.employeeName}"></option>
+                            </div>
+                        </select>
+
+                        <span class="input-group-text">Customer</span>
+                        <select class="me-2" th:field="*{customerId}">
+                            <option value="">Choose</option>
+                            <div th:each="customer : ${customerList}">
+                                <option th:value="${customer.customerId}" th:text="${customer.customerName}"></option>
+                            </div>
+                        </select>
+
+                        <span class="input-group-text">Service</span>
+                        <select class="me-2" th:field="*{serviceId}">
+                            <option value="">Choose</option>
+                            <div th:each="service : ${serviceList}">
+                                <option th:value="${service.serviceId}" th:text="${service.serviceName}"></option>
+                            </div>
+                        </select>
+                    </div>
+
+                    <br>
+                    <div class="input-group mb-5 d-flex align-content-center justify-content-center">
+                        <button type="submit" class="btn btn-primary">Create contract</button>
+                        <button type="button" class="btn btn-secondary ms-3">
+                            <a th:href="@{/contract/list}" style="text-decoration: none" class="text-light">
+                                Back to list contract</a>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </center>
+    </div>
+</div>
+
+<!--+++++++++++++++++++++footer+++++++++++++++++++++-->
+<div th:replace="~{layout/footer.html}"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="/template/bootstrap/jquery-3.6.0.min.js"></script>
+<script src="/template/bootstrap/js/bootstrap.js"></script>
+<script src="/template/index.js"></script>
+</body>
+</html>
